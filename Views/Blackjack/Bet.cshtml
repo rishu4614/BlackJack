@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Bet";
+}
+
+
+<body>
+    <div>
+        <section>
+            <h2 >-----Welcome to BlackJack Game-----</h2> <br />
+              
+            <br />
+                
+
+            @using (Html.BeginForm("Bet", "Blackjack"))
+            {
+                <label>Enter Total Amount : <input type="number" name="Total" /></label><br />
+                <label> Enter betting amount : <input type="number" name="betAmount" /> </label>
+
+                <input type="submit" value="Click to Start" />
+
+            }
+
+        </section>
+
+    </div>
+
+</body>

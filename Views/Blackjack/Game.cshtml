@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Game";
+}
+
+
+<div>
+    <h2>Blackjack</h2>
+
+</div>
+
+
+<body>
+
+
+    @using (Html.BeginForm("Game", "Blackjack", FormMethod.Post))
+    {
+        <div class="bottom-right" style="margin-right: 100px">
+
+            <input type="submit" value="Start" name="click" class="btn btn-default" />
+        </div>
+
+    }
+    <br />
+
+    <h3>Total amount: @ViewBag.Total $ </h3>
+    <h3>Betting amount is : @ViewBag.Amount $</h3>
+    <br />
+
+
+    <style>
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+    <table class="table">
+
+        <tr>
+            <th>Card No.</th>
+            <th>Player</th>
+            <th>Dealer</th>
+        </tr>
+
+        <tr>
+            <td>1   </td>
+            <td>  @ViewBag.displayPCard0  </td>
+            <td>  @ViewBag.displayDCard0 </td>
+
+        </tr>
+        <tr>
+            <td>2   </td>
+            <td>  @ViewBag.displayPCard1  </td>
+            <td>   @ViewBag.displayDCard1 </td>
+
+        </tr>
+        <tr>
+            <td>3   </td>
+            <td>  @ViewBag.displayPCard2  </td>
+            <td>   @ViewBag.displayDCard2 </td>
+
+        </tr>
+        <tr>
+            <td>4   </td>
+            <td>  @ViewBag.displayPCard3  </td>
+            <td>   @ViewBag.displayDCard3 </td>
+
+        </tr>
+    </table>
+
+
+
+    <br>
+    <br>
+
+
+    <label> Player Total Hand: @ViewBag.playervalue</label>
+    <br />
+    <br />
+    <label> Dealer Total Hand: @ViewBag.dealervalue</label>
+    <br />
+    <br />
+
+
+    @using (Html.BeginForm("Hit", "Blackjack", FormMethod.Post))
+    {
+        <div class="bottom-left">
+            <input style='margin-right:100px' type="submit" value="Hit" name="click" class="btn btn-default" />
+        </div>
+
+    }<br>
+    @using (Html.BeginForm("Stand", "Blackjack", FormMethod.Post))
+    {
+        <div class="bottom-left">
+            <input type="submit" value="Stand" name="click" class="btn btn-default" />
+        </div>
+
+    }
+
+
+    <br />
+    <br />
+    <div>
+        <label> Game State : @ViewBag.winner     </label>
+        <br />
+        <label> @ViewBag.loose </label>
+        <br />
+        <label> @ViewBag.won </label>
+        <br />
+        <label> @ViewBag.Totalamount</label>
+
+
+    </div>
+    <br />
+
+
+    @using (Html.BeginForm("Play_Again", "Blackjack", FormMethod.Post))
+    {
+        <div class="bottom-right" style="margin-right: 100px">
+            <input type="submit" value="Play Again" name="click" class="btn btn-default" />
+        </div>
+
+    }
+</body>
